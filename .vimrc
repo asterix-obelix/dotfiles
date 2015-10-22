@@ -1,6 +1,3 @@
-"	run this command first
-"	git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -21,7 +18,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-surround'
 Plugin 'tomasr/molokai'
+
+"	for JSON
+Plugin 'elzr/vim-json'
 
 " non github repos
 Plugin 'git://git.wincent.com/command-t.git'
@@ -52,3 +56,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+nnoremap <F3> :NERDTree<CR>
+nnoremap <F4> :NERDTreeToggle<CR>
