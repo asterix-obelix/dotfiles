@@ -21,6 +21,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #   create the .tmux.conf and write some contents as spicified on the above site
 cat << EOF >> ~/.tmux.conf
 # List of plugins
+
+#   change the default key binding to HOME key from ctrl-b
+set -g prefix Home
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 
