@@ -19,7 +19,7 @@ which tmux
 #   follow instructions from here https://github.com/tmux-plugins/tpm
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #   create the .tmux.conf and write some contents as spicified on the above site
-cat << EOF >> ~/.tmux-01.conf
+cat << EOF >> ~/.tmux.conf
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
