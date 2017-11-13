@@ -20,20 +20,36 @@ which tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 #   create the .tmux.conf and write some contents as spicified on the above site
 cat << EOF >> ~/.tmux.conf
-# List of plugins
+run-shell "powerline-daemon -q"
+source "~/.local/lib/python3.5/site-packages/powerline/bindings/tmux/powerline.conf"
+set -g mouse on
+# utf8 is on
+set -g utf8 on
+set -g status-utf8 on
+# increase scrollback buffer size
+set -g history-limit 50000
+# tmux messages are displayed for 4 seconds
+set -g display-time 4000
 
-#   change the default key binding to HOME key from ctrl-b
+# refresh 'status-left' and 'status-right' more often
+set -g status-interval 5
+# focus events enabled for terminals that support them
+set -g focus-events on
+
+# super useful when using "grouped sessions" and multi-monitor setup
+setw -g aggressive-resize on
+
+set -g @colors-solarized '256'
+#set -g @colors-solarized 'dark'
+#set -g @colors-solarized 'light'
+#set -g @colors-solarized 'base16'
+
 set -g prefix Home
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
-
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'git@github.com/user/plugin'
-# set -g @plugin 'git@bitbucket.com/user/plugin'
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+set -g @plugin 'seebi/tmux-colors-solarized'
 run '~/.tmux/plugins/tpm/tpm'
+
 EOF
 #   all done, now try out tmux
 echo "Done. type tmux to try it out if there were no errors."
